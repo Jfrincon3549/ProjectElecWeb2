@@ -1,0 +1,40 @@
+﻿@page
+@model Prj_RegistroUsuario_JFRA.Pages.SummaryModel
+@{
+    ViewData["Title"] = "Summary";
+    var picpath = string.Format("{0}://{1}{2}", Request.Scheme, Request.Host, Request.PathBase) + "/Uploads/" + Model.regist.ProfilePicture;
+}
+
+    <form method="post">
+        <table class="table table-hover" width="66%">
+            <tr>
+                <td font-size="x-larger" colspan="2"><strong>PERFIL DEL USUARIO CREADO</strong></td>
+                <td rowspan="6">
+                    <img alt="" src="@picpath" style=" height: 200px; width: 196px" />
+                </td>
+            </tr>
+            <tr>
+                <td width="328px"><strong>USERNAME</strong></td>
+                <td width="535px"><label>@Model.regist.UserName</label></td>
+            </tr>
+            <tr>
+                <td width="328px"><strong>PASSWORD</strong></td>
+                <td width="535px"><label>@Model.regist.Password</label></td>
+            </tr>
+            <tr>
+                <td width="328px"><strong>GENDER</strong></td>
+                <td width="535px"><label>@Model.regist.Gender</label></td>
+            </tr>
+            <tr>
+                <td width="328px">&nbsp;</td>
+                <td width="535px">&nbsp;</td>
+            </tr>
+            <tr>
+                <td text-aling="center" colspan="2">
+                    <input type="submit" value="Volver"/>
+                </td>
+                
+            </tr>
+        </table>
+    </form>
+

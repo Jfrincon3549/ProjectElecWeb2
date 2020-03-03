@@ -1,0 +1,65 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+    string monthtxt;
+    string daytxt;
+    if (DateTime.Now.ToString("dddd") == "domingo" || DateTime.Now.ToString("dddd") == "sabado") {
+        daytxt = DateTime.Now.ToString("dddd") + " Fin de semana"; }
+    else {
+        daytxt = DateTime.Now.ToString("dddd") + " dia Regular";
+    }
+
+    switch (@DateTime.Now.Month) {
+        case 1: monthtxt = "Enero"; break;
+        case 2: monthtxt = "Febrero"; break;
+        case 3: monthtxt = "Marzo"; break;
+        case 4: monthtxt = "Abril"; break;
+        case 5: monthtxt = "Mayo"; break;
+        case 6: monthtxt = "Junio"; break;
+        case 7: monthtxt = "Julio"; break;
+        case 8: monthtxt = "Agosto"; break;
+        case 9: monthtxt = "Septiembre"; break;
+        case 10: monthtxt = "Octubre"; break;
+        case 11: monthtxt = "Noviembre"; break;
+        case 12: monthtxt = "Diciembre"; break;
+        default: monthtxt="";break;
+    }
+
+    }
+
+    <div class="container">
+        <marquee>Mi Etiqueta de Marquesina</marquee>
+        <table>
+
+            <tr>
+                <td>DIA:</td>
+                <td>@DateTime.Now.Day</td>
+            </tr>
+            <tr>
+                <td>MES:</td>
+                <td>@monthtxt</td>
+            </tr>
+            <tr>
+                <td>AÑO:</td>
+                <td>@DateTime.Now.Year</td>
+            </tr>
+            <tr>
+                <td>HORA:</td>
+                <td>@DateTime.Now.Hour</td>
+            </tr>
+            <tr>
+                <td>MINUTOS: </td>
+                <td>@DateTime.Now.Minute</td>
+            </tr>
+            <tr>
+                <td>SEGUNDOS: </td>
+                <td>@DateTime.Now.Second</td>
+            </tr>
+            <tr>
+                <td>DESCRIPCION:  </td>
+                <td>Hoy es @daytxt</td>
+            </tr>
+        </table>
+    </div>
+
